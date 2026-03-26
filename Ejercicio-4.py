@@ -52,12 +52,10 @@ while True:
 
     prioridad = input("Prioridad (Normal/Urgente): ").capitalize()
 
-    # 2. Lógica de Cálculo
     v_cita = COSTO_DE_LOS_SERVICIOS[t_cliente]["valor_cita"]
     v_atencion = COSTO_DE_LOS_SERVICIOS[t_cliente][t_atencion]
     total_pago = v_cita + (v_atencion * cantidad)
 
-    # 3. Almacenamiento en el arreglo (Lista de diccionarios)
     pacientes.append({
         "cedula": cedula,
         "nombre": nombre,
@@ -83,7 +81,7 @@ print("\nLISTADO ORDENADO (POR VALOR):")
 for p in pacientes:
     print(f"Fecha: {p['fecha']} | CC: {p['cedula']} | Paciente: {p['nombre']} | Total: ${p['total']:,}")
 
-# Búsqueda final
+
 print("\n--- Búsqueda de Paciente ---")
 busqueda = input("Ingrese la cédula para consultar: ")
 resultado = next((p for p in pacientes if p['cedula'] == busqueda), None)
